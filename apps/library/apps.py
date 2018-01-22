@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class LibraryConfig(AppConfig):
-    name = 'library'
+    name = 'apps.library'
+    verbose_name = 'библиотека'

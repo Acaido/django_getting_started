@@ -2,4 +2,5 @@ from django.apps import AppConfig
 
 
 class DiscographyConfig(AppConfig):
-    name = 'discography'
+    name = 'apps.discography'
+    verbose_name = 'дискография'

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.name.upper }}</title>
+</head>
+<body>
+    <h2>
+        {{ book.name.capitalize }}
+    </h2>
+    <p>Книга: {{ book.name }}</p>
+    <p>Автор(ы):
+        {% for author in book.author.all %}
+            <a href="/library/author/{{ author.id }}">{{ author.first_name }} {{ author.last_name }}</a>
+        {% endfor %}
+    </p>
+    <p>Жанры(ы):
+        {% for genre in book.genre.all %}
+            <a href="/library/genre/{{ genre.id }}">#{{ genre.name }}</a>
+        {% endfor %}
+    </p>
+    <p><a href="{% url 'lib_index' %}">На главную</a></p>
+</body>
+</html>

@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.discography',
-    'apps.library',
-    'apps.shop',
-    'apps.twitter',
+    'apps.discography.apps.DiscographyConfig',
+    'apps.library.apps.LibraryConfig',
+    'apps.shop.apps.ShopConfig',
+    'apps.twitter.apps.TwitterConfig',
 ]
 
 MIDDLEWARE = [
@@ -121,5 +121,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 STATIC_URL = '/static/'

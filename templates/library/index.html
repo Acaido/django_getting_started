@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <script type="text/javascript" src="/static/jquery-latest.js"></script>
+    <script type="text/javascript" src="/static/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="/static/load_tablesorter.js"></script>
+</head>
+<body>
+<h3>Список авторов</h3>
+
+<table id="authors", border="k">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for author in authors %}
+        <tr onclick="document.location='/library/author/{{ author.id }}'">
+            <td>{{ author.first_name }}</td>
+            <td>{{ author.last_name }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
